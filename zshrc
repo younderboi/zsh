@@ -17,7 +17,6 @@ alias la="ls -A"
 alias l="ls -CF"
 alias zsreload="source ~/.zshrc"
 alias clear-hashcat="rm /home/noctua/.local/share/hashcat/hashcat.potfile"
-alias john="~/arsenal/sources/john/run/john"
 
 #=== PATH
 export PATH=$HOME/bin:$PATH
