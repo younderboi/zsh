@@ -5,7 +5,7 @@ eval $(ssh-agent)
 eval "$(direnv hook zsh)"
 
 #=== Aliases
-#alias get_tun0_ip="ip -4 addr show tun0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
+alias get_tun0_ip="ip -4 addr show tun0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
 alias clip="xclip -selection clipboard"
 alias vi="nvim"
 alias c="clear"
@@ -13,7 +13,7 @@ alias ll="ls -l"
 alias la="ls -A"
 alias l="ls -CF"
 alias zsreload="source ~/.zshrc"
-alias clear-hashcat="rm /home/noctua/.local/share/hashcat/hashcat.potfile"
+alias clear-hashcat="rm ~/.local/share/hashcat/hashcat.potfile"
 
 #=== PATH
 export PATH=$HOME/bin:$PATH
@@ -36,7 +36,7 @@ export TMUX_CONF="~/.config/tmux.conf"
 export XDG_CONFIG_HOME=$HOME/.config
 
 #=== Arsenal
-alias ars=cd ~/arsenal/
+alias ars=cd /arsenal/
 
 #=== Plugins
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
