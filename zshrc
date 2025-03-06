@@ -7,9 +7,6 @@ eval "$(direnv hook zsh)"
 #=== Aliases
 #alias get_tun0_ip="ip -4 addr show tun0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
 alias clip="xclip -selection clipboard"
-alias gp="sgpt"
-alias gprl="sgpt --repl temp"
-alias gpsh="sgpt --shell"
 alias vi="nvim"
 alias c="clear"
 alias ll="ls -l"
@@ -44,11 +41,7 @@ alias ars=cd ~/arsenal/
 #=== Plugins
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-#=== X integration
-export DISPLAY=:0
-
 #=== The following lines were added by compinstall
-
 zstyle ':completion:*' completer _complete _ignored
 zstyle :compinstall filename '/home/noctua/.zshrc'
 
@@ -62,17 +55,3 @@ SAVEHIST=1000
 setopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
-
-# Shell-GPT integration ZSH v0.2
-_sgpt_zsh() {
-if [[ -n "$BUFFER" ]]; then
-    _sgpt_prev_cmd=$BUFFER
-    BUFFER+="⌛"
-    zle -I && zle redisplay
-    BUFFER=$(sgpt --shell <<< "$_sgpt_prev_cmd" --no-interaction)
-    zle end-of-line
-fi
-}
-zle -N _sgpt_zsh
-bindkey ^l _sgpt_zsh
-# Shell-GPT integration ZSH v0.2
